@@ -1,0 +1,7 @@
+
+venv/
+.venv-scraping/
+.vscode/
+__pycache__/
+tests/
+scrapeOr.code-workspace
