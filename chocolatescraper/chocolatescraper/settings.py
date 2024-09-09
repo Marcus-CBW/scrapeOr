@@ -50,9 +50,12 @@ ROBOTSTXT_OBEY = False
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    "chocolatescraper.middlewares.ChocolatescraperDownloaderMiddleware": 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+#   "chocolatescraper.middlewares.ChocolatescraperDownloaderMiddleware": 543,
+   'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+   'scrapy_user_agents.middlewares.RandomUserAgentMiddleware': 400,
+}
+
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -66,6 +69,7 @@ ITEM_PIPELINES = {
    #"chocolatescraper.pipelines.ChocolatescraperPipeline": 300,
    #"chocolatescraper.pipelines.PriceToUSDPipeline": 100,
    "chocolatescraper.pipelines.DuplicatesPipeline": 200,
+   "chocolatescraper.pipelines.SavingToMysqlPipeline": 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

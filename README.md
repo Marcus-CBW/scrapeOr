@@ -1,9 +1,9 @@
 
-# ScrapeOr - Web Scraping Projekt mit Scrapy
+# scrapeOr - Web Scraping Projekt mit Scrapy
 
 ## Übersicht
 
-**ScrapeOr** ist ein Web Scraping-Projekt, das mit dem Python-Framework **Scrapy** entwickelt wurde. Dieses Projekt ermöglicht das Extrahieren von Daten aus einer oder mehreren Webseiten und deren Speicherung in verschiedenen Formaten wie JSON, CSV oder einer Datenbank. Das Hauptziel dieses Projekts ist es, automatisch strukturierte Daten von Webseiten zu sammeln, zu analysieren und zu speichern.
+**scrapeOr** ist ein Web Scraping-Projekt, das mit dem Python-Framework **Scrapy** entwickelt wurde. Dieses Projekt ermöglicht das Extrahieren von Daten aus einer oder mehreren Webseiten und deren Speicherung in verschiedenen Formaten wie JSON, CSV oder einer Datenbank. Das Hauptziel dieses Projekts ist es, automatisch strukturierte Daten von Webseiten zu sammeln, zu analysieren und zu speichern.
 
 ## Voraussetzungen
 
@@ -18,7 +18,7 @@ Bevor Sie das Projekt starten, stellen Sie sicher, dass folgende Voraussetzungen
 1. **Repository klonen**:
 
 
-   git clone https://github.com/Marcus-CBW/ScrapeOr.git
+   git clone https://github.com/Marcus-CBW/scrapeOr.git
    cd ScrapeOr
 
 
@@ -67,7 +67,7 @@ Bevor Sie das Projekt starten, stellen Sie sicher, dass folgende Voraussetzungen
 ## Projektstruktur
 
 
-ScrapeOr/
+scrapeOr/
 │
 ├── .venv-scraping/          # Virtuelle Umgebung (nicht versioniert)
 ├── .vscode
@@ -85,4 +85,3 @@ Um das Projekt zu erweitern und neue Seiten zu scrapen, können Sie einfach eine
 
 Weitere Informationen zu Scrapy finden Sie in der offiziellen [Scrapy-Dokumentation](https://docs.scrapy.org/en/latest/).
 
-## Lizenz
