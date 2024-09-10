@@ -18,7 +18,8 @@ class ChocolatespiderSpider(scrapy.Spider):
 
             chocolate = ChocolateProductLoader(item=ChocolateProduct(), selector=product)
             chocolate.add_css('name', 'a.product-item-meta__title::text'),
-            chocolate.add_css('price', 'span.price', re='<span class="price">\n              <span class="visually-hidden">Sale price</span>(.*)</span>')
+            #chocolate.add_css('price', 'span.price', re=r'(\d{1,5}(?:,\d{3})*\.\d{2})')
+            chocolate.add_css('price', 'span.price', re=r'<span class="visually-hidden">(.*?)\s*(\d{1,5}(?:,\d{3})*(?:\.\d{2})?)')
             chocolate.add_css('url', 'div.product-item-meta a::attr(href)')
             yield chocolate.load_item()
 

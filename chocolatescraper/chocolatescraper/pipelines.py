@@ -4,7 +4,6 @@
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 
 import mysql.connector
-from mysql.connector import Error
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
@@ -48,36 +47,87 @@ class DuplicatesPipeline:
 class SavingToMysqlPipeline(object):
     def __init__(self):
         self.create_connection()
+        self.create_table()
 
     def create_connection(self):
-        self.connection = mysql.connector.connect(
-            host = 'localhost',
-            user = 'root',
-            password = '',
-            database = 'chocolate_scraping',
-            port = '3306'
-        )
-        self.curr = self.connection.cursor()
+        try:
+            #import pdb; pdb.set_trace()
+
+            self.connection = mysql.connector.connect(
+                host = 'localhost',
+                user = 'root',
+                password = '',
+                database = 'chocolate_scraping',
+                port = '3306'
+            )
+            self.curr = self.connection.cursor()
+            print("Connection established.")
+
+        except mysql.connector.Error as err:
+            print(f"Error: {err}")
+
+    def create_table(self):
+        try:
+            # Check if the table exists by querying information_schema
+            self.curr.execute("""
+                SELECT COUNT(*)
+                FROM information_schema.tables 
+                WHERE table_schema = %s
+                AND table_name = %s
+            """, ('chocolate_scraping', 'chocolate_products'))
+            table_exists = self.curr.fetchone()[0]
+
+            if table_exists:
+                print("Table already exists.")
+            else:
+                # Create table if it doesn't exist
+                self.curr.execute("""
+                    CREATE TABLE chocolate_products (
+                        id INT AUTO_INCREMENT PRIMARY KEY,
+                        name VARCHAR(255),
+                        price DECIMAL(10, 2) NULL,
+                        url VARCHAR(255),
+                        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                    )
+                """)
+                self.connection.commit()
+                print("Table created.")
+        except mysql.connector.Error as err:
+            print(f"Error: {err}")
+
 
     def process_item(self, item, spider):
         self.store_db(item)
         return item
     
     def store_db(self, item):
+        # try:
+        #     import pdb; pdb.set_trace()
+        #     self.curr.execute("""INSERT INTO chocolate_products (name, price, url) VALUES (%s, %s, %s)""", (
+        #         # item["name"],
+        #         # item["price"],
+        #         # item["url"]
+
+        #         item.get("name", "Unknown Name"),  # Default to "Unknown Name" if name is missing
+        #         item.get("price", None),  # Default to None if price is missing
+        #         item.get("url", "Unknown URL")  # Default to "Unknown URL" if URL is missing
+            
+        #     ))
+        #     self.connection.commit()
+        #     print("Data inserted successfully!")
+            
+        # except BaseException as e:
+        #     print(e)
         try:
-            self.curr.execute("""INSERT INTO chocolate_products (name, price, url) VALUES (%s, %s, %s)""", (
-                # item["name"],
-                # item["price"],
-                # item["url"]
-
-                item.get("name", "Unknown Name"),  # Default to "Unknown Name" if name is missing
-                item.get("price", None),  # Default to None if price is missing
-                item.get("url", "Unknown URL")  # Default to "Unknown URL" if URL is missing
+            # Use item.get() to handle missing 'price' key
+            price = item.get('price', None)  # If 'price' doesn't exist, use None
             
-            ))
+            # Insert into database with the possibly None price value
+            self.curr.execute("""
+                INSERT INTO chocolate_products (name, price, url) 
+                VALUES (%s, %s, %s)
+            """, (item['name'], price, item['url']))
+            
             self.connection.commit()
-            print("Data inserted successfully!")
-            
-        except BaseException as e:
-            print(e)
-
+        except mysql.connector.Error as err:
+            print(f"Error: {err}")

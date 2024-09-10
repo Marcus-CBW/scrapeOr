@@ -1,0 +1,20 @@
+https://youtu.be/NiFuoJw0sn8?si=NL2MWCb6lwtG-AdI&t=445
+
+
+Using pdb (Python Debugger)
+The pdb module in Python allows you to run your script in debugging mode from the console.
+To use pdb:
+ 
+import pdb; pdb.set_trace()
+
+You can insert the following line in your script wherever you want the debugger to start, usually just before or inside the function you want to debug.
+Once in the pdb prompt, you can use the following commands:
+
+    n (next): Execute the next line.
+    s (step): Step into the function.
+    c (continue): Continue execution until the next breakpoint.
+    p <variable>: Print the value of a variable.
+
+Using Logging
+For more advanced debugging and to keep track of different levels of information (debug, info, warning, error), you can use the logging module.
+
