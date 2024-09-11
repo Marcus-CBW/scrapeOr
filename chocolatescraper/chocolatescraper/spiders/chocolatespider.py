@@ -1,14 +1,24 @@
+from urllib.parse import urlencode
 import scrapy
 from chocolatescraper.items import ChocolateProduct
 from chocolatescraper.itemloaders import ChocolateProductLoader
+from secret import API_KEY
+
+
+def get_proxy_url(url):
+    payload = {'api_key': API_KEY, 'url': url}
+    proxy_url = 'https://proxy.scrapeops.io/v1/?' + urlencode(payload)
+    return proxy_url
 
 class ChocolatespiderSpider(scrapy.Spider):
     name = "chocolatespider"
     allowed_domains = ["chocolate.co.uk"]
-    start_urls = ["https://chocolate.co.uk/collections/all"]
+    #start_urls = ["https://chocolate.co.uk/collections/all"]
 
-    # def parse(self, response):
-    #     pass
+    def start_requests(self):
+        start_url = 'https://chocolate.co.uk/collections/all'
+        yield scrapy.Request(url=get_proxy_url(start_url), callback=self.parse)
+
     def parse(self, response):
 
         products = response.css('product-item')
@@ -28,4 +38,4 @@ class ChocolatespiderSpider(scrapy.Spider):
 
         if next_page is not None:
             next_page_url = 'https://www.chocolate.co.uk' + next_page
-            yield response.follow(next_page_url, callback=self.parse)
+            yield response.follow(get_proxy_url(next_page_url), callback=self.parse)
