@@ -20,7 +20,8 @@ class ChocolatespiderSpider(scrapy.Spider):
             chocolate.add_css('name', 'a.product-item-meta__title::text'),
             #chocolate.add_css('price', 'span.price', re=r'(\d{1,5}(?:,\d{3})*\.\d{2})')
             chocolate.add_css('price', 'span.price', re=r'<span class="visually-hidden">(.*?)\s*(\d{1,5}(?:,\d{3})*(?:\.\d{2})?)')
-            chocolate.add_css('url', 'div.product-item-meta a::attr(href)')
+            chocolate.add_css('url', 'div.product-item-meta a::attr(href)') # ::attr(href) selektiert das href-Attribut der a-Tags, 
+            # d.h., es extrahiert den Link (URL), der mit dem href-Attribut verbunden ist.
             yield chocolate.load_item()
 
         next_page = response.css('[rel="next"] ::attr(href)').get()
