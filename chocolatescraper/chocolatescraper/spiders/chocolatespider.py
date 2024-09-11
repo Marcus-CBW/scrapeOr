@@ -13,10 +13,10 @@ def get_proxy_url(url):
 class ChocolatespiderSpider(scrapy.Spider):
     name = "chocolatespider"
     allowed_domains = ['chocolate.co.uk', 'proxy.scrapeops.io']
-    start_urls = ["https://chocolate.co.uk/collections/all"]
+    start_urls = ["https://www.chocolate.co.uk/collections/all"]
 
     def start_requests(self):
-        start_url = 'https://chocolate.co.uk/collections/all'
+        start_url = 'https://www.chocolate.co.uk/collections/all'
         yield scrapy.Request(url=get_proxy_url(start_url), callback=self.parse)
 
     def parse(self, response):

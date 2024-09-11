@@ -18,3 +18,5 @@ Once in the pdb prompt, you can use the following commands:
 Using Logging
 For more advanced debugging and to keep track of different levels of information (debug, info, warning, error), you can use the logging module.
 
+scrapy crawl chocolatespider
+scrapy crawl chocolatespider -O test.csv
