@@ -2,7 +2,7 @@ from urllib.parse import urlencode
 import scrapy
 from chocolatescraper.items import ChocolateProduct
 from chocolatescraper.itemloaders import ChocolateProductLoader
-from secret import API_KEY
+from chocolatescraper.secret import API_KEY
 
 
 def get_proxy_url(url):
@@ -12,8 +12,8 @@ def get_proxy_url(url):
 
 class ChocolatespiderSpider(scrapy.Spider):
     name = "chocolatespider"
-    allowed_domains = ["chocolate.co.uk"]
-    #start_urls = ["https://chocolate.co.uk/collections/all"]
+    allowed_domains = ['chocolate.co.uk', 'proxy.scrapeops.io']
+    start_urls = ["https://chocolate.co.uk/collections/all"]
 
     def start_requests(self):
         start_url = 'https://chocolate.co.uk/collections/all'
