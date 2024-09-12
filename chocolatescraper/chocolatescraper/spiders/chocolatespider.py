@@ -17,7 +17,7 @@ class ChocolatespiderSpider(scrapy.Spider):
 
 
     custom_settings = {
-        'FEEDS':    {'../data/%(name)s/%(name)s_%(time)s.csv': {'format': 'csv',}}
+        'FEEDS':    {'../data/%(name)s/%(name)s_%(mtime)s.csv': {'format': 'csv',}}
         }
 
     def start_requests(self):

@@ -1,4 +1,5 @@
 https://youtu.be/NiFuoJw0sn8?si=NL2MWCb6lwtG-AdI&t=445
+https://www.geeksforgeeks.org/scrapy-feed-exports/
 
 
 Using pdb (Python Debugger)
@@ -20,3 +21,13 @@ For more advanced debugging and to keep track of different levels of information
 
 scrapy crawl chocolatespider
 scrapy crawl chocolatespider -O test.csv
+
+
+# feedexport.py:
+params["mtime"] = params["time"].split('+')[0] 
+# Neuer Parameter mtime, Zeitzone abschneiden (+00-00)
+
+# chocolatespider.py:
+custom_settings = {
+    'FEEDS':    {'../data/%(name)s/%(name)s_%(mtime)s.csv': {'format': 'csv',}}
+    }
