@@ -15,6 +15,11 @@ class ChocolatespiderSpider(scrapy.Spider):
     allowed_domains = ['chocolate.co.uk', 'proxy.scrapeops.io']
     start_urls = ["https://www.chocolate.co.uk/collections/all"]
 
+
+    custom_settings = {
+        'FEEDS':    {'../data/%(name)s/%(name)s_%(time)s.csv': {'format': 'csv',}}
+        }
+
     def start_requests(self):
         start_url = 'https://www.chocolate.co.uk/collections/all'
         yield scrapy.Request(url=get_proxy_url(start_url), callback=self.parse)
