@@ -1,4 +1,23 @@
-https://youtu.be/NiFuoJw0sn8?si=NL2MWCb6lwtG-AdI&t=445
+bookscraper: http://books.toscrape.com/
+    scrapy startproject bookscraper
+    cd bookscraper
+    scrapy genspider bookspider books.toscrape.com
+    scrapy list
+    scrapy shell
+    fetch('http://books.toscrape.com/catalogue/category/books_1/')
+    response.body  # Check the raw HTML content
+    # response.css('article.product_pod h3 a')
+    response.css('article.product_pod').get()
+    books = response.css('article.product_pod')
+    book = books[0]
+    book.css('article.product_pod h3 a::attr(title)').get()
+
+    book.css('p.price_color::text').get() # The price of the book
+    book.css('article.product_pod h3 a::attr(href)').get() # url of the book
+    response.css('li.next a::attr(href)').get()
+
+
+https://www.youtube.com/watch?v=ExTimuRFn3M&list=PLkhQp3-EGsIi39YF-BE306DDX1xVSTHmn&index=9
 https://www.geeksforgeeks.org/scrapy-feed-exports/
 
 
