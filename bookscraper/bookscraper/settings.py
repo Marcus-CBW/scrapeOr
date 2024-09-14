@@ -12,6 +12,19 @@ BOT_NAME = "bookscraper"
 SPIDER_MODULES = ["bookscraper.spiders"]
 NEWSPIDER_MODULE = "bookscraper.spiders"
 
+FEED_EXPORT_ENCODING = "utf-8"
+FEEDS = {
+   '../data/%(name)s/%(name)s_%(mtime)s_batch_%(batch_id)d.csv': {
+      'format': 'csv',
+      'batch_item_count': 30,
+      },
+
+   '../data/%(name)s/%(name)s_%(mtime)s.jsonl': {
+      'format': 'jsonlines',
+      'overweite': True
+      }
+   }
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "bookscraper (+http://www.yourdomain.com)"
@@ -92,4 +105,4 @@ ITEM_PIPELINES = {
 # Set settings whose default value is deprecated to a future-proof value
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
-FEED_EXPORT_ENCODING = "utf-8"
+

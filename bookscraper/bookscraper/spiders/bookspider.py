@@ -11,6 +11,11 @@ class BookspiderSpider(scrapy.Spider):
     item_count = 0
     max_items = 42  # Set the maximum number of items to scrape, None to scrape all
 
+    # Overwrites FEEDS configuration in settings.py
+    # custom_settings = {
+    #     'FEEDS':    {'../data/%(name)s/%(name)s_%(mtime)s.csv': {'format': 'csv',}}
+    #     }
+    
 
     def parse(self, response):
 

@@ -1,3 +1,11 @@
+quotescraper: http://quotes.toscrape.com/js/
+https://www.youtube.com/watch?v=EijzO7n2-dg
+https://scrapeops.io/python-scrapy-playbook/scrapy-playwright/
+
+
+
+
+
 bookscraper: http://books.toscrape.com/
     scrapy startproject bookscraper
     cd bookscraper
@@ -19,6 +27,7 @@ bookscraper: http://books.toscrape.com/
 
 https://www.youtube.com/watch?v=ExTimuRFn3M&list=PLkhQp3-EGsIi39YF-BE306DDX1xVSTHmn&index=9
 https://www.geeksforgeeks.org/scrapy-feed-exports/
+https://www.geeksforgeeks.org/scrapy-sending-an-e-mail/
 
 
 Using pdb (Python Debugger)
