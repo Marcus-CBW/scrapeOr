@@ -13,7 +13,7 @@ class BookspiderSpider(scrapy.Spider):
 
     # Overwrites FEEDS configuration in settings.py
     # custom_settings = {
-    #     'FEEDS':    {'../data/%(name)s/%(name)s_%(mtime)s.csv': {'format': 'csv',}}
+    #     'FEEDS':    {'../zdata/%(name)s/%(name)s_%(mtime)s.csv': {'format': 'csv',}}
     #     }
     
 

@@ -13,6 +13,9 @@ SPIDER_MODULES = ["quotescraper.spiders"]
 NEWSPIDER_MODULE = "quotescraper.spiders"
 PLAYWRIGHT_MAX_CONCURRENT_CONTEXTS = 5
 
+RETRY_ENABLED = True
+RETRY_TIMES = 5  # Anzahl der maximalen Wiederholungen bei einem Fehler
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "quotescraper (+http://www.yourdomain.com)"
 
@@ -21,12 +24,12 @@ ROBOTSTXT_OBEY = False
 
 FEED_EXPORT_ENCODING = "utf-8"
 FEEDS = {
-   '../data/%(name)s/%(name)s_%(mtime)s_batch_%(batch_id)d.csv': {
+   '../zdata/%(name)s/%(name)s_%(mtime)s_batch_%(batch_id)d.csv': {
       'format': 'csv',
       'batch_item_count': 100,
       },
 
-   '../data/%(name)s/%(name)s_%(mtime)s.jsonl': {
+   '../zdata/%(name)s/%(name)s_%(mtime)s.jsonl': {
       'format': 'jsonlines',
       'overweite': True
       }

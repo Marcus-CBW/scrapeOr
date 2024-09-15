@@ -14,12 +14,12 @@ NEWSPIDER_MODULE = "bookscraper.spiders"
 
 FEED_EXPORT_ENCODING = "utf-8"
 FEEDS = {
-   '../data/%(name)s/%(name)s_%(mtime)s_batch_%(batch_id)d.csv': {
+   '../zdata/%(name)s/%(name)s_%(mtime)s_batch_%(batch_id)d.csv': {
       'format': 'csv',
       'batch_item_count': 30,
       },
 
-   '../data/%(name)s/%(name)s_%(mtime)s.jsonl': {
+   '../zdata/%(name)s/%(name)s_%(mtime)s.jsonl': {
       'format': 'jsonlines',
       'overweite': True
       }
