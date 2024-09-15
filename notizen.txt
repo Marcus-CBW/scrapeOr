@@ -1,7 +1,13 @@
 quotescraper: http://quotes.toscrape.com/js/
 https://www.youtube.com/watch?v=EijzO7n2-dg
-https://scrapeops.io/python-scrapy-playbook/scrapy-playwright/
-
+    scrapy startproject quotescraper
+    cd quotescraper
+    scrapy genspider quote quotes.toscrape.com/js/
+    scrapy list
+    scrapy shell
+    fetch('https://quotes.toscrape.com/js/')
+    response.body
+    
 
 
 
