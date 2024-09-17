@@ -1,3 +1,18 @@
+https://scrapeops.io/python-scrapy-playbook/python-scrapy-walmart-scraper/#how-to-architect-our-walmart-scraper
+pip install scrapeops-scrapy-proxy-sdk
+
+Spider spezifische Einstellungen in der spider.py Datei, anstatt in 'settings.py':
+custom_settings = { ... }
+
+    custom_settings = {
+        'SCRAPEOPS_API_KEY': YOUR_API_KEY,  # API Key aus einem externen Modul
+        'SCRAPEOPS_PROXY_ENABLED': True,  # Aktiviert den ScrapeOps Proxy
+        'DOWNLOADER_MIDDLEWARES': {
+            'scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk': 725,  # ScrapeOps Proxy Middleware
+        }
+    }
+
+
 quotescraper: http://quotes.toscrape.com/js/
 https://www.youtube.com/watch?v=EijzO7n2-dg
     scrapy startproject quotescraper
@@ -8,9 +23,6 @@ https://www.youtube.com/watch?v=EijzO7n2-dg
     fetch('https://quotes.toscrape.com/js/')
     response.body
     
-
-
-
 
 bookscraper: http://books.toscrape.com/
     scrapy startproject bookscraper

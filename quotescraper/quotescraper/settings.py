@@ -7,6 +7,7 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
+
 BOT_NAME = "quotes"
 
 SPIDER_MODULES = ["quotescraper.spiders"]
@@ -34,6 +35,7 @@ FEEDS = {
       'overweite': True
       }
    }
+
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
