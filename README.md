@@ -10,8 +10,8 @@
 Bevor Sie das Projekt starten, stellen Sie sicher, dass folgende Voraussetzungen erfüllt sind:
 
 - Python 3.x installiert
-- Virtuelle Umgebung (empfohlen)
-- Scrapy (wird über `requirements.txt` installiert)
+- 
+- 
 
 ## Installation
 
@@ -19,7 +19,7 @@ Bevor Sie das Projekt starten, stellen Sie sicher, dass folgende Voraussetzungen
 
 
    git clone https://github.com/Marcus-CBW/scrapeOr.git
-   cd ScrapeOr
+   cd scrapeOr
 
 
 2. **Virtuelle Umgebung erstellen** (optional, aber empfohlen):
@@ -29,44 +29,10 @@ Bevor Sie das Projekt starten, stellen Sie sicher, dass folgende Voraussetzungen
    source venv/bin/activate  # Für Linux/MacOS
    venv\Scripts\activate      # Für Windows
 
-
-3. **Abhängigkeiten installieren**:
-
-   Alle notwendigen Pakete befinden sich in der Datei `requirements.txt`. Installieren Sie sie mit:
-
-
-   pip install -r requirements.txt
-
-
-## Verwendung
-
-1. **Spider ausführen**:
-
-   Nach der Installation der Abhängigkeiten können Sie den Scrapy-Spider wie folgt starten:
-
-
-   scrapy crawl spider_name
-
-
-   Ersetzen Sie `spider_name` durch den Namen des zu verwendenden Spiders, der in der Datei `spiders/` definiert ist.
-
-2. **Daten speichern**:
-
-   Sie können die gesammelten Daten in verschiedenen Formaten speichern. Beispiele:
-
-   - Speichern als JSON:
-
-     scrapy crawl spider_name -o output.json
-
-
-   - Speichern als CSV:
-
-     scrapy crawl spider_name -o output.csv
-
-
 ## Projektstruktur
-
-
+- 
+- 
+<!-- 
 scrapeOr/
 │
 ├── .venv-scraping/          # Virtuelle Umgebung (nicht versioniert)
@@ -83,5 +49,5 @@ Um das Projekt zu erweitern und neue Seiten zu scrapen, können Sie einfach eine
 
 ## Hilfe und Unterstützung
 
-Weitere Informationen zu Scrapy finden Sie in der offiziellen [Scrapy-Dokumentation](https://docs.scrapy.org/en/latest/).
+Weitere Informationen zu Scrapy finden Sie in der offiziellen [Scrapy-Dokumentation](https://docs.scrapy.org/en/latest/). -->
 
