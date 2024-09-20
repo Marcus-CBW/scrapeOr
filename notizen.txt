@@ -1,3 +1,35 @@
+https://www.youtube.com/watch?v=_8uxMS0anqQ
+https://scrapeops.io/python-scrapy-playbook/python-scrapy-indeed-scraper/
+scrapy startproject jobportale
+scrapy genspider indeed de.indeed.com
+
+
+?q=Fachinformatiker+Anwendungsentwicklung&l=Frankfurt+am+Main&radius=50&ts=1726823144698&sc=0bf%3Aexrec%28%29%3B&from=searchOnHP&rq=1&rsIdx=0&fromage=last&vjk=abb4e4733a45ae1e
+
+Erklärung:
+Die URL verweist auf eine Job-Suchseite von Indeed. Sie zeigt Suchergebnisse für den Jobtitel „Fachinformatiker Anwendungsentwicklung“
+in der Region „Frankfurt am Main“ mit einem Suchradius von 50 Kilometern. Die URL enthält folgende Parameter:
+
+    q=Fachinformatiker+Anwendungsentwicklung: Der Suchbegriff ist "Fachinformatiker Anwendungsentwicklung".
+    l=Frankfurt+am+Main: Die Suche ist auf Frankfurt am Main beschränkt.
+    radius=50: Der Suchradius beträgt 50 Kilometer um Frankfurt.
+    ts=1726823144698: Ein Zeitstempel, der die Session oder den Zeitpunkt der Suche markieren könnte.
+    sc=0bf%3Aexrec%28%29%3B: Ein Parameter, der wahrscheinlich für die interne Filterung oder Sortierung von Suchergebnissen steht.
+    from=searchOnHP: Dieser Parameter zeigt an, dass die Suche von der Hauptseite von Indeed gestartet wurde.
+    rq=1 und rsIdx=0: Mögliche Filter- oder Indexwerte, die die Ergebnisse genauer definieren.
+    fromage=last: Filtert die Ergebnisse nach kürzlich veröffentlichten Stellenanzeigen.
+    vjk=abb4e4733a45ae1e: Dies ist eine eindeutige Job-ID, die auf eine spezifische Stellenanzeige verweist. (Werbung)
+
+
+
+
+
+
+
+
+
+
+
 https://scrapeops.io/python-scrapy-playbook/python-scrapy-walmart-scraper/#how-to-architect-our-walmart-scraper
 pip install scrapeops-scrapy-proxy-sdk
 
