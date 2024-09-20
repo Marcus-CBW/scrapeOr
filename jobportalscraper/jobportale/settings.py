@@ -12,6 +12,24 @@ BOT_NAME = "jobportale"
 SPIDER_MODULES = ["jobportale.spiders"]
 NEWSPIDER_MODULE = "jobportale.spiders"
 
+PLAYWRIGHT_LAUNCH_OPTIONS = {
+    "headless": False,  # Deaktiviert den Headless-Modus
+}
+
+PLAYWRIGHT_BROWSER_TYPE = "firefox"
+
+FEED_EXPORT_ENCODING = "utf-8"
+FEEDS = {
+   '../zdata/%(name)s/%(name)s_%(mtime)s_batch_%(batch_id)d.csv': {
+      'format': 'csv',
+      'batch_item_count': 100,
+      },
+
+   '../zdata/%(name)s/%(name)s_%(mtime)s.jsonl': {
+      'format': 'jsonlines',
+      'overweite': True
+      }
+   }
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "jobportale (+http://www.yourdomain.com)"
