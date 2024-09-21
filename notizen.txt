@@ -1,6 +1,6 @@
 https://www.youtube.com/watch?v=_8uxMS0anqQ
 https://scrapeops.io/python-scrapy-playbook/python-scrapy-indeed-scraper/
-scrapy startproject jobportale
+scrapy startproject jobportalscraper
 scrapy genspider indeed de.indeed.com
 
 
@@ -19,39 +19,6 @@ in der Region „Frankfurt am Main“ mit einem Suchradius von 50 Kilometern. Di
     rq=1 und rsIdx=0: Mögliche Filter- oder Indexwerte, die die Ergebnisse genauer definieren.
     fromage=last: Filtert die Ergebnisse nach kürzlich veröffentlichten Stellenanzeigen.
     vjk=abb4e4733a45ae1e: Dies ist eine eindeutige Job-ID, die auf eine spezifische Stellenanzeige verweist. (Werbung)
-
-
-XPath:
-/html/body/main/div/div[2]/div/div[5]/div/div[1]/div[5]/div/ul/li[1]
-
-CSS-Pfad:
-html.js-focus-visible body.is-desktop.desktopAurora.host-hydrated main.is-i18n div#jobsearch-Main div#jobsearch-JapanPage.css-kyg8or.eu4oa1w0 div.jobsearch-JapanPageLayout.is-i18n.css-1wfd0c.eu4oa1w0 div.css-hyhnne.e37uo190 div.css-jvh80z.eu4oa1w0 div.css-pprl14.eu4oa1w0 div#mosaic-jobResults.mosaic-zone div#mosaic-provider-jobcards.mosaic.mosaic-provider-jobcards.mosaic-provider-hydrated ul.css-zu9cdh.eu4oa1w0 li.css-5lfssm.eu4oa1w0
-
-CSS-Selektor:
-li.css-5lfssm:nth-child(1)
-li.css-5lfssm:nth-child(2)
-li.css-5lfssm:nth-child(3)
-li.css-5lfssm:nth-child(4)
-li.css-5lfssm:nth-child(5)
-
-#mosaic-afterFifthJobResult
-div#mosaic-afterFifthJobResult.mosaic.mosaic-empty-zone
-
-li.css-5lfssm:nth-child(7)
-li.css-5lfssm:nth-child(8)
-li.css-5lfssm:nth-child(9)
-li.css-5lfssm:nth-child(10)
-li.css-5lfssm:nth-child(11)
-
-#mosaic-afterTenthJobResult
-li.css-5lfssm:nth-child(12):
-html.js-focus-visible body.is-desktop.desktopAurora.host-hydrated main.is-i18n div#jobsearch-Main div#jobsearch-JapanPage.css-kyg8or.eu4oa1w0 div.jobsearch-JapanPageLayout.is-i18n.css-1wfd0c.eu4oa1w0 div.css-hyhnne.e37uo190 div.css-jvh80z.eu4oa1w0 div.css-pprl14.eu4oa1w0 div#mosaic-jobResults.mosaic-zone div#mosaic-provider-jobcards.mosaic.mosaic-provider-jobcards.mosaic-provider-hydrated ul.css-zu9cdh.eu4oa1w0 li.css-5lfssm.eu4oa1w0
-
-li.css-5lfssm:nth-child(13)
-li.css-5lfssm:nth-child(14)
-li.css-5lfssm:nth-child(15)
-li.css-5lfssm:nth-child(16)
-li.css-5lfssm:nth-child(17)
 
 --
 
